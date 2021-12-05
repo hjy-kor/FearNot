@@ -68,7 +68,6 @@ def getForeignStat():
             [temp_name, temp_today_total, temp_past_total, temp_today_death, temp_past_death, temp_chimyong, temp_vacc], index=data_needed.columns)
         data_needed = data_needed.append(temp_array, ignore_index=True)
 
-    # data_needed.to_excel('ForeignData.xlsx')
     to_drop = data_needed[data_needed['chimyong'] == "NA"].index
     data_needed = data_needed.drop(to_drop)
     data_needed = data_needed.sort_values(
